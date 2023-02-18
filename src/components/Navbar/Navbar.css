@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #000000;
+    border: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+
+.navbar-title > h2 {
+    margin-bottom: 0;
+}
+
+.navbar-subtitle > h4 {
+    margin: 0;
+}
+
+.navbar-links-items {
+    padding-left: 120px;
+}

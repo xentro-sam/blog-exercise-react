@@ -1,25 +1,26 @@
 import * as React from 'react';
 import './Card.css';
-import cardImage from '../../assets/Images/abstract.png';
+
 import clappingIcon from '../../assets/Icons/clapping.svg';
-import blackHeart from '../../assets/Icons/heart-black.svg';
+import likeIcon from '../../assets/Icons/heart-red.svg';
+import unlikeIcon from '../../assets/Icons/heart-black.svg';
 
 export default function Card(cardInfo) {
+  const [like, setLike] = React.useState(false);
   return (
     <div className="card">
       <div className="card-image">
-        <img src={cardImage} alt="" />
+        <img src={cardInfo.cardImage} alt="" />
       </div>
       <div className="card-data">
-        <div>2nd January 2018</div>
-        <div>2 mins</div>
+        <div>{cardInfo.date}</div>
+        <div>{cardInfo.readingTime}</div>
       </div>
       <div className="card-title">
-                The future of abstract art and the culture
+        {cardInfo.title}
       </div>
       <div className="card-subtitle">
-                Create a blog post subtitle that summarizes your
-                post in a few short, punchy sentences and entices your...
+        {cardInfo.description}
       </div>
       <div>
         <hr />
@@ -30,11 +31,15 @@ export default function Card(cardInfo) {
             <img src={clappingIcon} alt="" />
           </div>
           <div className="claps">
-            10
+            {cardInfo.claps}
           </div>
         </div>
         <div className="card-footer-icons">
-          <img src={blackHeart} alt="" />
+          <img
+            src={like ? likeIcon : unlikeIcon}
+            alt=""
+            onClick={() => setLike(!like)}
+          />
         </div>
       </div>
     </div>

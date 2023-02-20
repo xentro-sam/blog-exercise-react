@@ -8,10 +8,11 @@ import unlikeIcon from '../../assets/Icons/heart-black.svg';
 export default function Card(cardInfo) {
   const [like, setLike] = React.useState(false);
   const [claps, setClaps] = React.useState(cardInfo.claps);
+  const imageSrc = require(`../../assets/Images/${cardInfo.image}`);
   return (
     <div className="card">
       <div className="card-image">
-        <img src={cardInfo.cardImage} alt="" />
+        <img src={imageSrc} alt="" />
       </div>
       <div className="card-data">
         <div>{cardInfo.date}</div>

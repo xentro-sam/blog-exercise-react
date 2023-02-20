@@ -9,7 +9,6 @@ try {
     return <Card
       key={uuid()}
       {...card}
-      cardImage={require('../../assets/Images/'+card.image)}
     />;
   });
 } catch (error) {

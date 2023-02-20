@@ -7,6 +7,7 @@ import unlikeIcon from '../../assets/Icons/heart-black.svg';
 
 export default function Card(cardInfo) {
   const [like, setLike] = React.useState(false);
+  const [claps, setClaps] = React.useState(cardInfo.claps);
   return (
     <div className="card">
       <div className="card-image">
@@ -28,10 +29,10 @@ export default function Card(cardInfo) {
       <div className="card-footer">
         <div className="card-claps">
           <div className="card-footer-icons">
-            <img src={clappingIcon} alt="" />
+            <img src={clappingIcon} alt="" onClick={() => setClaps(claps + 1)} />
           </div>
           <div className="claps">
-            {cardInfo.claps}
+            {claps}
           </div>
         </div>
         <div className="card-footer-icons">

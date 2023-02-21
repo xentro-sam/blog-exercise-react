@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <div
+      class="card-image"
+    >
+      <img
+        alt=""
+      />
+    </div>
+    <div
+      class="card-data"
+    >
+      <div />
+      <div />
+    </div>
+    <div
+      class="card-title"
+    />
+    <div
+      class="card-subtitle"
+    />
+    <div>
+      <hr />
+    </div>
+    <div
+      class="card-footer"
+    >
+      <div
+        class="card-claps"
+      >
+        <div
+          class="card-footer-icons"
+        >
+          <img
+            alt=""
+            src="clapping.svg"
+          />
+        </div>
+        <div
+          class="claps"
+        />
+      </div>
+      <div
+        class="card-footer-icons"
+      >
+        <img
+          alt=""
+          src="heart-black.svg"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

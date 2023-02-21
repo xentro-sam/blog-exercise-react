@@ -5,18 +5,44 @@ import clappingIcon from '../../assets/Icons/clapping.svg';
 import likeIcon from '../../assets/Icons/heart-red.svg';
 import unlikeIcon from '../../assets/Icons/heart-black.svg';
 
+import {UPDATE_BLOG_DATA as updateBlogData} from '../../constants/apiEndPoints';
+import {getFormattedDateFromUtcDate} from '../../utils/common';
+import makeRequest from '../../utils/makeRequest';
+
 export default function Card(cardInfo) {
-  const [like, setLike] = React.useState(false);
-  const [claps, setClaps] = React.useState(cardInfo.claps);
-  const imageSrc = require(`../../assets/Images/${cardInfo.image}`);
+  const [isLiked, setLike] = React.useState(cardInfo.liked);
+  const [clapCount, setClaps] = React.useState(cardInfo.claps);
+
+  const handleClaps = async () => {
+    try {
+      await makeRequest(updateBlogData(cardInfo.id), {
+        data: {claps: clapCount + 1},
+      });
+      setClaps(clapCount + 1);
+    } catch (error) {
+      alert('There was an error updating the claps');
+    }
+  };
+
+  const handleLike = async () => {
+    try {
+      await makeRequest(updateBlogData(cardInfo.id), {
+        data: {liked: !isLiked},
+      });
+      setLike(!isLiked);
+    } catch (error) {
+      alert('There was an error updating the like');
+    }
+  };
+
   return (
     <div className="card">
       <div className="card-image">
-        <img src={imageSrc} alt="" />
+        <img src={cardInfo.image} alt="" />
       </div>
       <div className="card-data">
-        <div>{cardInfo.date}</div>
-        <div>{cardInfo.readingTime}</div>
+        <div>{getFormattedDateFromUtcDate(cardInfo.date)}</div>
+        <div>{cardInfo.reading_time}</div>
       </div>
       <div className="card-title">
         {cardInfo.title}
@@ -30,17 +56,17 @@ export default function Card(cardInfo) {
       <div className="card-footer">
         <div className="card-claps">
           <div className="card-footer-icons">
-            <img src={clappingIcon} alt="" onClick={() => setClaps(claps + 1)} />
+            <img src={clappingIcon} alt="" onClick={handleClaps} />
           </div>
           <div className="claps">
-            {claps}
+            {clapCount}
           </div>
         </div>
         <div className="card-footer-icons">
           <img
-            src={like ? likeIcon : unlikeIcon}
+            src={isLiked ? likeIcon : unlikeIcon}
             alt=""
-            onClick={() => setLike(!like)}
+            onClick={handleLike}
           />
         </div>
       </div>

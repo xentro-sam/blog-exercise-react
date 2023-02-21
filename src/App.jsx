@@ -1,16 +1,11 @@
 import * as React from 'react';
 import './App.css';
-import {Navbar, Footer} from './components';
-import cardsData from './utils/getCards/index.jsx';
+import Home from './pages';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <div className='main-container page-padding'>
-        {cardsData}
-      </div>
-      <Footer />
+      <Home />
     </div>
   );
 }

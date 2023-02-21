@@ -3,11 +3,11 @@
     flex-direction: column;
 }
 
-.main-container {
-    min-height: 85vh;
-    display: flex;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+body {
+    margin: 0;
+}
+
+.page-padding {
+    padding-left: 5%;
+    padding-right: 5%;
 }

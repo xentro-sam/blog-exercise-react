@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './Card.css';
+import {useNavigate} from 'react-router-dom';
 
 import clappingIcon from '../../assets/Icons/clapping.svg';
 import likeIcon from '../../assets/Icons/heart-red.svg';
@@ -12,27 +13,24 @@ import makeRequest from '../../utils/makeRequest';
 export default function Card(cardInfo) {
   const [isLiked, setLike] = React.useState(cardInfo.liked);
   const [clapCount, setClaps] = React.useState(cardInfo.claps);
+  const navigate = useNavigate();
 
-  const handleClaps = async () => {
-    try {
-      await makeRequest(updateBlogData(cardInfo.id), {
-        data: {claps: clapCount + 1},
-      });
-      setClaps(clapCount + 1);
-    } catch (error) {
-      alert('There was an error updating the claps');
-    }
+  const handleClaps = () => {
+    makeRequest(updateBlogData(cardInfo.id), {
+      data: {claps: clapCount + 1},
+    }, navigate)
+        .then((data) => {
+          setClaps(clapCount + 1);
+        });
   };
 
   const handleLike = async () => {
-    try {
-      await makeRequest(updateBlogData(cardInfo.id), {
-        data: {liked: !isLiked},
-      });
-      setLike(!isLiked);
-    } catch (error) {
-      alert('There was an error updating the like');
-    }
+    makeRequest(updateBlogData(cardInfo.id), {
+      data: {liked: !isLiked},
+    }, navigate)
+        .then((data) => {
+          setLike(!isLiked);
+        });
   };
 
   return (

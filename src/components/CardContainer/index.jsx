@@ -6,7 +6,6 @@ import makeRequest from '../../utils/makeRequest';
 import './CardContainer.css';
 
 export default function CardContainer() {
-  const [error, setError] = React.useState(null);
   const [cards, setCards] = React.useState([]);
   const navigate = useNavigate();
 
@@ -14,15 +13,8 @@ export default function CardContainer() {
     makeRequest(GET_BLOG_DATA, {}, navigate)
         .then((data) => {
           setCards(data);
-        })
-        .catch((error) => {
-          setError(error);
         });
   }, []);
-
-  if (error) {
-    return <div>There was an error loading the cards</div>;
-  }
 
   return cards ? (
     <div className='main-container page-padding'>

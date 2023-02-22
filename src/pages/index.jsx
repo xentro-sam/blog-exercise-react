@@ -1,3 +1,5 @@
 import Home from './Home';
+import Error from './Error';
+import PageNotFound from './PageNotFound';
 
-export default Home;
+export {Home, Error, PageNotFound};

@@ -17,6 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios)/)"
+  ],
     "coverageReporters": [
       "json",
       "lcov",
@@ -46,7 +49,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

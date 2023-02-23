@@ -9,21 +9,32 @@ exports[`Card should render correctly 1`] = `
       class="card-image"
     >
       <img
-        alt=""
+        alt="image"
+        src="https://picsum.photos/200/300"
       />
     </div>
     <div
       class="card-data"
     >
-      <div />
-      <div />
+      <div>
+        10th
+      October, 
+      2020
+      </div>
+      <div>
+        5 mins
+      </div>
     </div>
     <div
       class="card-title"
-    />
+    >
+      Test Title
+    </div>
     <div
       class="card-subtitle"
-    />
+    >
+      Test Description
+    </div>
     <div>
       <hr />
     </div>
@@ -37,19 +48,22 @@ exports[`Card should render correctly 1`] = `
           class="card-footer-icons"
         >
           <img
-            alt=""
+            alt="clapping"
             src="clapping.svg"
           />
         </div>
         <div
           class="claps"
-        />
+          data-testid="clap-count"
+        >
+          0
+        </div>
       </div>
       <div
         class="card-footer-icons"
       >
         <img
-          alt=""
+          alt="like"
           src="heart-black.svg"
         />
       </div>

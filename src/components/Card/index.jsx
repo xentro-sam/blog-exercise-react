@@ -36,7 +36,7 @@ export default function Card(cardInfo) {
   return (
     <div className="card">
       <div className="card-image">
-        <img src={cardInfo.image} alt="" />
+        <img src={cardInfo.image} alt="image" />
       </div>
       <div className="card-data">
         <div>{getFormattedDateFromUtcDate(cardInfo.date)}</div>
@@ -54,16 +54,16 @@ export default function Card(cardInfo) {
       <div className="card-footer">
         <div className="card-claps">
           <div className="card-footer-icons">
-            <img src={clappingIcon} alt="" onClick={handleClaps} />
+            <img src={clappingIcon} alt="clapping" onClick={handleClaps} />
           </div>
-          <div className="claps">
+          <div className="claps" data-testid="clap-count">
             {clapCount}
           </div>
         </div>
         <div className="card-footer-icons">
           <img
             src={isLiked ? likeIcon : unlikeIcon}
-            alt=""
+            alt="like"
             onClick={handleLike}
           />
         </div>

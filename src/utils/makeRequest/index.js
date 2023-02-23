@@ -15,7 +15,7 @@ const makeRequest = async (apiEndPoint, dynamicConfig = {}, navigate) => {
     if (navigate) {
       const errorStatus = error.response?.status;
       if (errorStatus) {
-        navigate(`${ERROR_ROUTE}/${errorStatus}}`);
+        navigate(`${ERROR_ROUTE}/${errorStatus}`);
       } else {
         navigate(ERROR_ROUTE);
       }

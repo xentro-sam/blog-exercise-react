@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogPosts should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="main-container page-padding"
+  >
+    <div
+      class="card"
+    >
+      <div
+        class="card-image"
+      >
+        <img
+          alt="image"
+          src="abstract.png"
+        />
+      </div>
+      <div
+        class="card-data"
+      >
+        <div>
+          29th
+      June, 
+      2021
+        </div>
+        <div />
+      </div>
+      <div
+        class="card-title"
+      >
+        mock title 1
+      </div>
+      <div
+        class="card-subtitle"
+      >
+        mock description 1
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="card-footer"
+      >
+        <div
+          class="card-claps"
+        >
+          <div
+            class="card-footer-icons"
+          >
+            <img
+              alt="clapping"
+              src="clapping.svg"
+            />
+          </div>
+          <div
+            class="claps"
+            data-testid="clap-count"
+          >
+            10
+          </div>
+        </div>
+        <div
+          class="card-footer-icons"
+        >
+          <img
+            alt="like"
+            src="heart-black.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="card"
+    >
+      <div
+        class="card-image"
+      >
+        <img
+          alt="image"
+          src="abstract.png"
+        />
+      </div>
+      <div
+        class="card-data"
+      >
+        <div>
+          29th
+      June, 
+      2022
+        </div>
+        <div />
+      </div>
+      <div
+        class="card-title"
+      >
+        mock title 2
+      </div>
+      <div
+        class="card-subtitle"
+      >
+        mock description 2
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="card-footer"
+      >
+        <div
+          class="card-claps"
+        >
+          <div
+            class="card-footer-icons"
+          >
+            <img
+              alt="clapping"
+              src="clapping.svg"
+            />
+          </div>
+          <div
+            class="claps"
+            data-testid="clap-count"
+          >
+            12
+          </div>
+        </div>
+        <div
+          class="card-footer-icons"
+        >
+          <img
+            alt="like"
+            src="heart-red.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
